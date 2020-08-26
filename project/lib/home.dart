@@ -23,60 +23,48 @@ class _FlowerAppState extends State<FlowerApp> {
 
   List<BottomNavigationBarItem> _itemList = [
     BottomNavigationBarItem(
-      icon: Icon(Icons.ac_unit),
-      /* icon: Image.asset(
-        'assets/images/discovery_normal.png',
-        width: 24,
-        height: 24,
-      ), */
-      title: Text('好友'),
-      /* activeIcon: Image.asset(
-        'assets/images/discovery_selected.png',
-        width: 24,
-        height: 24,
-      ) */
+      icon: Image.asset(
+        'assets/images/invite_normal.png',
+        width: 24, height: 24,
+      ),
+      title: new Text('好友'),
+      activeIcon: Image.asset(
+        'assets/images/invite_selected.png',
+        width: 24, height: 24
+      )
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.ac_unit),
-      /* icon: Image.asset(
+      icon: Image.asset(
         'assets/images/discovery_normal.png',
-        width: 24,
-        height: 24,
-      ), */
-      title: Text('发现'),
-      /* activeIcon: Image.asset(
+        width: 24, height: 24
+      ),
+      title: new Text('发现'),
+      activeIcon: Image.asset(
         'assets/images/discovery_selected.png',
-        width: 24,
-        height: 24,
-      ) */
+        width: 24, height: 24
+      )
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.ac_unit),
-      /* icon: Image.asset(
-        'assets/images/discovery_normal.png',
-        width: 24,
-        height: 24,
-      ), */
-      title: Text('管理'),
-      /* activeIcon: Image.asset(
-        'assets/images/discovery_selected.png',
-        width: 24,
-        height: 24,
-      ) */
+      icon: Image.asset(
+        'assets/images/manager_normal.png',
+        width: 24, height: 24
+      ),
+      title: new Text('管理'),
+      activeIcon: Image.asset(
+        'assets/images/manager_selected.png',
+        width: 24, height: 24
+      )
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.ac_unit),
-      /* icon: Image.asset(
-        'assets/images/discovery_normal.png',
-        width: 24,
-        height: 24,
-      ), */
-      title: Text('我的'),
-      /* activeIcon: Image.asset(
-        'assets/images/discovery_selected.png',
-        width: 24,
-        height: 24,
-      ) */
+      icon: Image.asset(
+        'assets/images/mine_normal.png',
+        width: 24, height: 24
+      ),
+      title: new Text('我的'),
+      activeIcon: Image.asset(
+        'assets/images/mine_selected.png',
+        width: 24, height: 24
+      )
     ),
   ];
 
