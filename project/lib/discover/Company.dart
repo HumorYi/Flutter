@@ -25,9 +25,10 @@ class Company {
     @required this.inc
   });
 
-  static List<Company> jsonToList(String json) {
+  // network 数据
+  static List<Company> mapToList(Map data) {
     List<Company> modelList = new List<Company>();
-    List list = jsonDecode(json)['list'];
+    List list = data['list'];
 
     list.forEach((item) {
       modelList.add(Company.mapToModel(item));
@@ -37,6 +38,34 @@ class Company {
   }
 
   static Company mapToModel(Map map) {
+    return new Company(
+      logo: map['logo_url'],
+      name: map['market_name'],
+      location: map['download_times_fixed'],
+      type: map['type'],
+      size: map['tag'],
+      employee: map['market_id'],
+      hot: map['download_times_fixed'],
+      count: map['cid2'],
+      inc: map['baike_name']
+    );
+  }
+
+
+
+  // 本地 mock 数据
+  static List<Company> jsonToListByLocal(String json) {
+    List<Company> modelList = new List<Company>();
+    List list = jsonDecode(json)['list'];
+
+    list.forEach((item) {
+      modelList.add(Company.mapToModelByLocal(item));
+    });
+
+    return modelList;
+  }
+
+  static Company mapToModelByLocal(Map map) {
     return new Company(
       logo: map['logo'],
       name: map['name'],

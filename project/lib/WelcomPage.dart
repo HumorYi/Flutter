@@ -30,7 +30,7 @@ class _WelcomePageState extends State<WelcomePage> {
       }
 
       setState(() {
-        second = --second;
+        second -= 1;
       });
     });
   }
@@ -51,7 +51,7 @@ class _WelcomePageState extends State<WelcomePage> {
           Container(
             margin: EdgeInsets.zero,
             child: Image.asset(
-              'assets/images/invite_normal.png',
+              'assets/images/SplashBgImage.jpg',
               height: Application.screenHeight,
               fit: BoxFit.cover,
             ),
