@@ -9,6 +9,7 @@ class BalanceScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('银行'),
         centerTitle: true,
+        backgroundColor: Theme.of(context).backgroundColor,
       ),
       body:
         /* Container(
@@ -65,6 +66,14 @@ class BalanceScreen extends StatelessWidget {
         /* Center(
           child: Text('银行'),
         ), */
+      floatingActionButton: new Theme(
+        data: ThemeData(accentColor: Colors.yellow),
+        // data: Theme.of(context).copyWith(accentColor: Colors.yellow),
+        child: new FloatingActionButton(
+          onPressed: null,
+          child: new Icon(Icons.add),
+        ),
+      ),
     );
   }
 }

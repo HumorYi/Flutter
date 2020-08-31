@@ -47,68 +47,19 @@ class _FlowerAppState extends State<FlowerApp> {
     },
   ];
 
-  // List<BottomNavigationBarItem> _itemList = [];
-
-  List<BottomNavigationBarItem> _itemList = [
-    BottomNavigationBarItem(
-      icon: Image.asset(
-        "assets/images/invite_normal.png",
-        width: 24, height: 24,
-      ),
-      title: new Text("好友"),
-      activeIcon: Image.asset(
-        "assets/images/invite_selected.png",
-        width: 24, height: 24
-      )
-    ),
-    BottomNavigationBarItem(
-      icon: Image.asset(
-        "assets/images/discovery_normal.png",
-        width: 24, height: 24
-      ),
-      title: new Text("发现"),
-      activeIcon: Image.asset(
-        "assets/images/discovery_selected.png",
-        width: 24, height: 24
-      )
-    ),
-    BottomNavigationBarItem(
-      icon: Image.asset(
-        "assets/images/manager_normal.png",
-        width: 24, height: 24
-      ),
-      title: new Text("管理"),
-      activeIcon: Image.asset(
-        "assets/images/manager_selected.png",
-        width: 24, height: 24
-      )
-    ),
-    BottomNavigationBarItem(
-      icon: Image.asset(
-        "assets/images/mine_normal.png",
-        width: 24, height: 24
-      ),
-      title: new Text("我的"),
-      activeIcon: Image.asset(
-        "assets/images/mine_selected.png",
-        width: 24, height: 24
-      )
-    ),
-  ];
+  List<BottomNavigationBarItem> _itemList = [];
 
   @override
   void initState() {
     super.initState();
 
-    /* _navigationBarList.forEach((Map item) {
+    _navigationBarList.forEach((Map item) {
       _itemList.add(BottomNavigationBarItem(
-        // icon: Image.asset(item["imgUrl"], width: width, height: height),
-        icon: Image.asset("assets/images/mine_normal.png", width: width, height: height),
+        icon: Image.asset(item["imgUrl"], width: width, height: height),
         title: Text(item["text"]),
-        // activeIcon: Image.asset(item["activeImgUrl"], width: width,height: height)
-        activeIcon: Image.asset("assets/images/mine_selected.png", width: width,height: height)
+        activeIcon: Image.asset(item["activeImgUrl"], width: width,height: height)
       ));
-    }); */
+    });
   }
 
   onTapAction(int index) {

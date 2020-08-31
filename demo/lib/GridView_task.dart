@@ -17,17 +17,20 @@ class _GridViewTaskState extends State<GridViewTask> {
         title: Text('GridView 的使用'),
         centerTitle: true,
       ),
-      body: getGridView3(),
+      body: getGridView4(),
     );
   }
 
   Widget getGridView1() {
     return GridView.count(
-      crossAxisCount: 2,
+      // 水平子Widget之间距
       crossAxisSpacing: 10,
-      mainAxisSpacing: 20,
-      // 宽高比，默认 1
+      // 垂直子Widget之间距
+      mainAxisSpacing: 10,
+      // 子 Widget 宽高比，默认 1
       childAspectRatio: 2,
+      // 一行展示 Widget 数量
+      crossAxisCount: 2,
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       children: getWidgetList(),
     );
@@ -35,12 +38,11 @@ class _GridViewTaskState extends State<GridViewTask> {
 
   Widget getGridView2() {
     return GridView.builder(
+      // SliverGridDelegateWithFixedCrossAxisCount 构建⼀个横轴固定数量 Widget
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        // 横向展示个数
         crossAxisCount: 2,
         crossAxisSpacing: 10,
         mainAxisSpacing: 20,
-        // 宽高比，默认 1
         childAspectRatio: 2,
       ),
       itemBuilder: (context, index) {
@@ -52,6 +54,7 @@ class _GridViewTaskState extends State<GridViewTask> {
 
   Widget getGridView3() {
     return GridView.builder(
+      // 水平方向元素个数不再固定，其水平个数也就是有几列，由 maxCrossAxisExtent 和屏幕的宽度以及 padding 和 mainAxisSpacing 等决定
       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
         // 横向最大宽度
         maxCrossAxisExtent: 100,
@@ -63,6 +66,20 @@ class _GridViewTaskState extends State<GridViewTask> {
         return getItemContainer(items[index]);
       },
       itemCount: items.length,
+    );
+  }
+
+  Widget getGridView4() {
+    return GridView.custom(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
+        mainAxisSpacing: 10.0,
+        crossAxisSpacing: 20.0
+      ),
+      childrenDelegate: SliverChildBuilderDelegate(
+        (context, position) => getItemContainer(items[position]),
+        childCount: items.length
+      )
     );
   }
 
